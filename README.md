@@ -1,27 +1,8 @@
-# UniThrift - Student Marketplace  
+# React + Vite
 
-A platform for school and university students to buy and sell second-hand items like books, bikes, phones, and hostel essentials. Designed for affordability, accessibility, and sustainability, it fosters a community-driven circular economy for students.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## Features  
-- **Buy and Sell Items**: Books, electronics, bikes, and more.  
-- **Hostel Essentials**: Special focus on hostel-specific items.  
-- **Affordable and Sustainable**: Encourages reuse and resource sharing.  
+Currently, two official plugins are available:
 
-## Technologies  
-- **Frontend**: React, Tailwind
-- **Backend**: Pocketbase
-
-## Setup  
-1. Clone the repository:  
-   ```bash
-   git clone https://github.com/GDSC-ZHCET/UniThrift.git
-   cd UniThrift
-   ```  
-2. Install dependencies:  
-   ```bash
-   npm install
-   ```  
-3. Run the project:  
-   ```bash
-   npm start
-   ```
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
