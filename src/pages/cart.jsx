@@ -5,8 +5,8 @@ const Cart = () => {
                 <div className="cart-items">
                     <img src="src/assets/shoes.png" />
                     <div className="cart-details">
-                        <h3>Nike Air Force 1 '07 Fresh</h3>
-                        <p>Men's Shoes</p>
+                        <h3>Nike Air Force 1 &apos;07 Fresh</h3>
+                        <p>Men&apos;s Shoes</p>
                         <p>UK6</p>
                         <p>Quantity: {quantity}</p>
                     </div>

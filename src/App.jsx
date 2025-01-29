@@ -1,6 +1,6 @@
-import Navbar from './navbar'
-import Cart from './cart'
-import Summary from './summary'
+import Navbar from './components/navbar'
+import Cart from './pages/cart'
+import Summary from './components/summary'
 
 function App() {
   return (
