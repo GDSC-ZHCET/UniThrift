@@ -2,11 +2,12 @@ import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import './index.css'
 import App from './App.jsx'
-import Product from './pages/Product.jsx'
+// import Product from './pages/Product.jsx'
 import Login from './pages/Login.jsx'
 import Signup from './pages/Signup.jsx'
 import Navbar from './components/Navbar.jsx';
-import Cart from './pages/cart.jsx';
+import Cart from './pages/Cart.jsx';
+import Product from './components/Product.jsx';
 
 const appRouter = createBrowserRouter([
   {
@@ -37,7 +38,12 @@ const appRouter = createBrowserRouter([
       {
         path: "/cart",
         element: <Cart />
-      }
+      },
+      {
+        path: "/product",
+        element: <Product />
+      },
+
     ]
   }
 ])

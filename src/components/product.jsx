@@ -1,6 +1,7 @@
 import React from 'react'
 import './product.css'
-import scale from '../../assets/scale.webp';
+import scale from '../assets/scale.webp';
+
 
 
 const Product = () => {

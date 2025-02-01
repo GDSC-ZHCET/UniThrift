@@ -1,4 +1,4 @@
-import Summary from "../components/summary";
+import Summary from "../components/Summary";
 
 const Cart = () => {
     const quantity=1

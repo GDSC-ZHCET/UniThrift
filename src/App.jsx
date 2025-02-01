@@ -1,4 +1,4 @@
-import Cart from './pages/cart'
+import Cart from './pages/Cart'
 
 function App() {
   return (

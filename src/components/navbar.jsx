@@ -1,40 +1,19 @@
+import { Link } from 'react-router-dom';
+
 const Navbar = () => {
-    return ( 
-        <nav className="Navbar">
-            <div className="logo">
-                Logo
+    return (
+        <nav className="w-full h-[8vh] flex justify-between items-center fixed bg-white border-b p-4">
+            <div className="font-bold text-2xl">
+                <Link to="/">UniThrift</Link>
             </div>
-            <div className="links">
-                <a href="/stationery">Stationery</a>
-                <a href="/electronics">Electronics</a>
-                <a href="/computer-laptops">Computers & Laptops</a>
-                <a href="/decor">Decor</a>
+            <div className='flex items-center gap-10 font-medium'>
+                <Link to="/cart">Cart</Link>
+                <Link to="/wishlist">Wishlist</Link>
+                <Link to="/login" className='bg-gray-600 hover:bg-gray-600/90 px-4 py-2 text-white rounded-md'>Login</Link>
             </div>
-            <div className="rightside">
-                <div className="searchbar">
-                    <img src="src/assets/searcg.png"  />
-                    <input type="text"
-                     className="search" 
-                     placeholder="Search"/>
-                </div>
-                <div className="Favs">
-                   <a href="/favourites">
-                        <img src="src/assets/h.png"  />
-                   </a>
-                </div>
-                <div className="cart">
-                    <a href="/cart">
-                        <img src="src/assets/cart.png"  />
-                    </a>
-                </div>
-                <div className="profile">
-                    <a href="/profile">
-                        <img src="src/assets/profile.png"  />
-                    </a>
-                </div>
-            </div>
+            
         </nav>
-     );
-}
- 
+    );
+};
+
 export default Navbar;
