@@ -1,5 +1,5 @@
 
-
+import "../pages/Signup.css"
 import React,{useState} from "react"
 import { use } from "react"
 function Signup (){

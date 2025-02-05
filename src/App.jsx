@@ -1,11 +1,13 @@
-import Signup from "./pages/Signup"
+import Product from'./pages/Product.jsx';
+import Signup from './pages/Signup.jsx';
+import Login from './pages/Login.jsx';
 
 function App() {
   
 
   return (
     <>
-    <Signup/>
+    <Login/>
     </>
   )
 }
