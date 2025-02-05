@@ -9,7 +9,9 @@ A platform for school and university students to buy and sell second-hand items 
 
 ## Technologies  
 - **Frontend**: React, Tailwind
-- **Backend**: Pocketbase
+- **Backend**: Firebase
+- **Database**: Cloud Firestore
+
 
 ## Setup  
 1. Clone the repository:  

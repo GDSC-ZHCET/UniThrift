@@ -1,19 +1,22 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import './index.css'
 import App from './App.jsx'
-import Product from './pages/Product.jsx'
+// import Product from './pages/Product.jsx'
 import Login from './pages/Login.jsx'
 import Signup from './pages/Signup.jsx'
-
+import Navbar from './components/Navbar.jsx';
+import Cart from './pages/Cart.jsx';
+import Product from './components/Product.jsx';
 
 const appRouter = createBrowserRouter([
   {
     path: "/",
     element: (
-      <Outlet />
+      <>
+        <Navbar />
+        <Outlet />
+      </>
     ),
     children: [
       {
@@ -32,6 +35,15 @@ const appRouter = createBrowserRouter([
         path:"/signup",
         element: <Signup />
       },
+      {
+        path: "/cart",
+        element: <Cart />
+      },
+      {
+        path: "/product",
+        element: <Product />
+      },
+
     ]
   }
 ])
