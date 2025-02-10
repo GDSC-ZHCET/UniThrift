@@ -1,0 +1,30 @@
+.product-style{
+    /* display: flex;
+    flex-direction: column; */
+    align-items: center;
+    gap: 10px;
+    height: 90vh;
+    text-align: center;
+}
+.head{
+    text-align: left;
+}
+.product h1{
+    color: #171717;
+    font-size: 50px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.product hr{
+    width: 200px;
+    height: 6px;
+    border-radius: 10px;
+    background: #252525;
+}
+
+.product-item{
+    margin-top:50px ;
+    /* display: flex; */
+
+}
