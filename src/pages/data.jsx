@@ -1,4 +1,3 @@
-
 import '../pages/data.css'
 
 function Data (props){

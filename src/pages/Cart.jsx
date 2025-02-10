@@ -1,8 +1,15 @@
 import Summary from "../components/Summary";
+import { useSelector } from "react-redux";
 
 const Cart = () => {
     const quantity=1
+
+    const cartItems = useSelector((store) => store.cart.items);
+
+
     return ( 
+        <div className="pt-[15vh]">
+        <span className="font-bold pl-10">Items In Cart: {cartItems.length}</span>
         <div className="content">
         <div className="cart-container">
             <div className="cart-items">
@@ -20,6 +27,7 @@ const Cart = () => {
             </div>
         </div>
         <Summary/>
+        </div>
         </div>
      );
 }

@@ -11,8 +11,9 @@ const cartSlice = createSlice({
     reducers: {
         addItems: (state, action) => {
             state.items.push(action.payload);
-            state.cartIds.push(action.payload.id);
-            console.log(Array.from(state.items))
+            state.cartIds.push(action.payload);
+            // console.log(Array.from(state.items))
+            console.log(action.payload);
         },
         removeItem: (state, action) => {
             let index = state.items.findIndex(obj => obj["id"] === action.payload);

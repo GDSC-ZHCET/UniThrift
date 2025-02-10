@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom';
 import Data from './data';
 import DataProducts from './DataProduct';
 import '../pages/Product.css'
+
 const Product = () => {
   const { productId } = useParams();
 
@@ -14,9 +15,6 @@ const Product = () => {
           return<Data key={i} id={data.id} name={data.name} image={data.image} price={data.price}/>
         })}
       </div>
-
-
-
     </div>
   );
 }

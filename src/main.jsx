@@ -8,14 +8,26 @@ import Signup from './pages/Signup.jsx'
 import Navbar from './components/Navbar.jsx';
 import Cart from './pages/Cart.jsx';
 import Product from './components/Product.jsx';
+import {Provider} from "react-redux";
+import appStore from './utils/appStore.js';
 
 const appRouter = createBrowserRouter([
+  {
+    path: "/login",
+    element: <Login />
+  },
+  {
+    path: "/signup", 
+    element: <Signup />
+  },
   {
     path: "/",
     element: (
       <>
+      <Provider store={appStore}>
         <Navbar />
         <Outlet />
+      </Provider>
       </>
     ),
     children: [
@@ -28,14 +40,6 @@ const appRouter = createBrowserRouter([
         element: <Product />
       },
       {
-        path: "/login",
-        element: <Login />
-      },
-      {
-        path:"/signup",
-        element: <Signup />
-      },
-      {
         path: "/cart",
         element: <Cart />
       },
@@ -43,8 +47,7 @@ const appRouter = createBrowserRouter([
         path: "/product",
         element: <Product />
       },
-
-    ]
+    ],
   }
 ])
 
