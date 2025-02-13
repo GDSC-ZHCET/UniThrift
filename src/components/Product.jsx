@@ -1,13 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import scale from "../assets/scale.webp";
 import { useDispatch, useSelector } from "react-redux";
 import { addItems } from "../utils/cartSlice";
+import useFetchProducts from "../utils/useFetchProducts";
 
 const Product = () => {
   const dispatch = useDispatch();
 
   const cartIds = useSelector((store) => store.cart.cartIds);
-
+  const {products, loading, error} = useFetchProducts();
+  useEffect(() => {
+    console.log(products);
+  }, [products]);
+  
   const handleAddToCart = (item) => {
     // if (!cartIds.includes(item)) {
     //   dispatch(addItems(item));

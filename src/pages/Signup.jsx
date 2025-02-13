@@ -1,7 +1,8 @@
 
 import "../pages/Signup.css"
 import React,{useState} from "react"
-import { use } from "react"
+import { signUp } from "../utils/useSignup.js"
+
 function Signup (){
     const [email,setEmail] = useState("")
     const [username,setUsername] = useState("")
@@ -21,7 +22,15 @@ function Signup (){
     function handleCPasswordChange (event){
         setCPassword(event.target.value);
     }
-    
+
+    const handleSignup = async (event) => {
+        event.preventDefault();
+        if (password !== cPassword) {
+            alert("Passwords do not match");
+            return;
+        }
+        signUp(email, password);
+    }
     return(
     <>
        
@@ -40,7 +49,7 @@ function Signup (){
          <input className= "input-text" value={cPassword} onChange={handleCPasswordChange} placeholder="Confirm Password"/>
          </div>
          <div>
-         <button className="Signup-button">Sign up</button>
+         <button className="Signup-button" onClick={handleSignup}>Sign up</button>
          </div>
     <p>Already have an account?
     <div><a href="##" className="link">Login</a></div></p>
