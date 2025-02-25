@@ -7,7 +7,7 @@ import Login from './pages/Login.jsx'
 import Signup from './pages/Signup.jsx'
 import Navbar from './components/Navbar.jsx';
 import Cart from './pages/Cart.jsx';
-import Product from './components/Product.jsx';
+import Product  from './components/Product.jsx';
 import {Provider} from "react-redux";
 import appStore from './utils/appStore.js';
 
