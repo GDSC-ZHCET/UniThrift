@@ -10,6 +10,7 @@ import Cart from './pages/Cart.jsx';
 import Product  from './components/Product.jsx';
 import {Provider} from "react-redux";
 import appStore from './utils/appStore.js';
+import { UserProvider } from './utils/UserContext.jsx';
 
 const appRouter = createBrowserRouter([
   {
@@ -54,5 +55,7 @@ const appRouter = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById('root'))
 
 root.render(
-  <RouterProvider router={appRouter}/>
+  <UserProvider>
+    <RouterProvider router={appRouter}/>
+  </UserProvider>
 );

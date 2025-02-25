@@ -31,7 +31,7 @@ function Signup() {
             alert("Passwords do not match");
             return;
         }
-        signUp(email, password, navigate);
+        signUp(email, password, username, navigate);
     }
 
     return (
