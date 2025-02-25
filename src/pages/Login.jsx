@@ -1,58 +1,73 @@
+import { useState } from "react"
+import { Link, useNavigate } from "react-router-dom"
+import { signIn } from "../utils/useSignin"
 
-import "../pages/Login.css"
-import React,{useState} from "react"
-import { use } from "react"
-function Login (){
-    const [email,setEmail] = useState("")
-    const [username,setUsername] = useState("")
-    const [password,setPassword] = useState("")
-    const [cPassword,setCPassword] = useState("")
-    
-    
-    function handleEmailChange (event){
+function Login() {
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
+    const [error, setError] = useState("")
+    const navigate = useNavigate()
+
+    function handleEmailChange(event) {
         setEmail(event.target.value);
     }
-    function handleUsernameChange (event){
-        setUsername(event.target.value);
-    }
-    function handlePasswordChange (event){
+
+    function handlePasswordChange(event) {
         setPassword(event.target.value);
     }
-    function handleCPasswordChange (event){
-        setCPassword(event.target.value);
-    }
-    
-    return(
-    <>
-       
-    <form className="form-elements"> 
-    <h2 className="heading" >Login</h2>
-         {/* <div>
-         <input className= "input-text" value={email} onChange={handleEmailChange} placeholder="Email"/>
-         </div> */}
-         <div>
-         <input className= "input-text" value={username} onChange={handleUsernameChange} placeholder="Username/Email"/>
-         </div>
-         <div>
-         <input className= "input-text" value={password} onChange={handlePasswordChange} placeholder="Password"/>
-         </div>
-         {/* <div>
-         <input className= "input-text" value={cPassword} onChange={handleCPasswordChange} placeholder="Confirm Password"/>
-         </div> */}
-         <div>
-         <button className="Login-button">Login</button>
-         </div>
-    <p>Don't have an account?
-    <div><a href="###" className="link">Sign up</a></div></p>
-    </form>
 
-</>
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        setError("");
+        
+        const result = await signIn(email, password);
+        if (result.success) {
+            navigate("/"); // Redirect to home page after successful login
+        } else {
+            setError(result.error);
+        }
+    };
 
+    return (
+        <div className="flex justify-center items-center min-h-screen">
+            <form onSubmit={handleSubmit} className="flex flex-col items-center font-sans max-w-md p-8"> 
+                <h2 className="text-2xl font-bold mb-8">Login</h2>
+                {error && <p className="w-full text-red-500 mb-4">{error}</p>}
+                <div className="w-full mb-4">
+                    <input 
+                        className="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-green-500" 
+                        type="email"
+                        value={email} 
+                        onChange={handleEmailChange} 
+                        placeholder="Email"
+                        required
+                    />
+                </div>
+                <div className="w-full mb-6">
+                    <input 
+                        className="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-green-500"
+                        type="password" 
+                        value={password} 
+                        onChange={handlePasswordChange} 
+                        placeholder="Password"
+                        required
+                    />
+                </div>
+                <button 
+                    className="w-full bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded transition duration-200"
+                    type="submit"
+                >
+                    Login
+                </button>
+                <p className="mt-4 text-sm">
+                    Don&apos;t have an account?{' '}
+                    <Link to="/signup" className="text-cyan-500 hover:text-cyan-600">
+                        Sign up
+                    </Link>
+                </p>
+            </form>
+        </div>
     );
-
-
-
-
 }
 
 export default Login
