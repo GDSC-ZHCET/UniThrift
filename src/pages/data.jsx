@@ -1,9 +1,9 @@
 import { useNavigate } from "react-router-dom";
-function Data(props) {
+function Data({ data }) {
     const naviagte = useNavigate();
 
     const handleShowProduct = () => {
-        naviagte(`product/${props.id}`)
+        naviagte(`product/${data.id}`)
     }
 
   return (
@@ -13,12 +13,12 @@ function Data(props) {
     >
       <img
         className="mb-2.5 w-72 h-48 object-cover"
-        src={props.image}
+        src={data.imageUrl}
         alt=""
       />
-      <p className="font-bold text-xl">{props.name}</p>
+      <p className="font-bold text-xl">{data.title}</p>
       <div className="font-medium text-lg">
-        <p>₹{props.price}</p>
+        <p>₹{data.price}</p>
       </div>
     </div>
   );

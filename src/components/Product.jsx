@@ -41,10 +41,10 @@ const Product = () => {
   return (
     <div className="flex items-center justify-center gap-10 w-full min-h-screen">
       <div className="">
-        <img src={product.image} alt="Product" className="h-fit w-[40vw]" />
+        <img src={product.imageUrl} alt="Product" className="h-fit max-h-[80vh] w-[40vw] object-cover" />
       </div>
       <div className="flex flex-col  gap-5 w-[50vw]">
-        <h1 className="w-full font-bold text-4xl">{product.name}</h1>
+        <h1 className="w-full font-bold text-4xl">{product.title}</h1>
         <div className="text-sm text-slate-700">
           <p>
             {product.description}

@@ -8,6 +8,7 @@ import Signup from './pages/Signup.jsx'
 import Navbar from './components/Navbar.jsx';
 import Cart from './pages/Cart.jsx';
 import Product  from './components/Product.jsx';
+import Upload from './pages/Upload.jsx';
 import {Provider} from "react-redux";
 import appStore from './utils/appStore.js';
 import { UserProvider } from './utils/UserContext.jsx';
@@ -48,6 +49,10 @@ const appRouter = createBrowserRouter([
         path: "/product",
         element: <Product />
       },
+      {
+        path: "/upload",
+        element: <Upload />
+    }
     ],
   }
 ])

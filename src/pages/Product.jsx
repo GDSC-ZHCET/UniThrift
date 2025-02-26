@@ -13,7 +13,7 @@ const Product = () => {
       <hr/>
       <div className="product-item">
         {products.map((data,i)=>{
-          return<Data key={i} id={data.id} name={data.name} image={data.image} price={data.price}/>
+          return<Data key={i} data={data}/>
         })}
       </div>
     </div>
