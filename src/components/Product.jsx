@@ -23,13 +23,13 @@ const Product = () => {
     }
   }, [products, productId]);
   
-  const handleAddToCart = (item) => {
+  const handleAddToCart = () => {
     // if (!cartIds.includes(item)) {
     //   dispatch(addItems(item));
     // } else {
     //   alert("Already in cart");
     // }
-    dispatch(addItems(item));
+    dispatch(addItems(product));
   };
 
    if (loading || products.length === 0) {
@@ -53,7 +53,7 @@ const Product = () => {
         <div className="text-xl font-semibold w-full">
           <p>Rs.{product.price}</p>
         </div>
-        <button onClick={() => handleAddToCart(100)} className="bg-blue-600 hover:bg-blue-500 text-white py-2 px-5 rounded-full cursor-pointer">Add to Cart</button>
+        <button onClick={handleAddToCart} className="bg-blue-600 hover:bg-blue-500 text-white py-2 px-5 rounded-full cursor-pointer">Add to Cart</button>
         <button className="border-2 border-blue-600 py-2 px-5 rounded-full cursor-pointer">Add to Wishlist</button>
       </div>
     </div>

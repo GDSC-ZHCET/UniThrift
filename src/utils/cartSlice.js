@@ -10,10 +10,18 @@ const cartSlice = createSlice({
     },
     reducers: {
         addItems: (state, action) => {
-            state.items.push(action.payload);
-            state.cartIds.push(action.payload);
-            // console.log(Array.from(state.items))
-            console.log(action.payload);
+            const existingItemIndex = state.items.findIndex(
+                item => item.id === action.payload.id
+            );
+
+            if (existingItemIndex >= 0) {
+                // Item exists, increment quantity
+                state.items[existingItemIndex].quantity += 1;
+            } else {
+                // Add new item with quantity 1
+                state.items.push({ ...action.payload, quantity: 1 });
+                state.cartIds.push(action.payload.id);
+            }
         },
         removeItem: (state, action) => {
             let index = state.items.findIndex(obj => obj["id"] === action.payload);

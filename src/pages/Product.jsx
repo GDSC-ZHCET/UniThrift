@@ -11,7 +11,7 @@ const Product = () => {
     <div className='product-style'>
       <h1 className='head'>Product {productId}</h1>
       <hr/>
-      <div className="product-item">
+      <div className="product-item flex">
         {products.map((data,i)=>{
           return<Data key={i} data={data}/>
         })}
