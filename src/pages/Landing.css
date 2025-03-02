@@ -1,0 +1,196 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Aptos', sans-serif;
+  background-color: #FDFFF3;
+  color: #333;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+html {
+  scroll-snap-type: y mandatory;
+  height: 100%;
+}
+
+section {
+  font-family: 'Aptos', sans-serif;
+  height: 100vh;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 32px;
+}
+
+.navbar {
+  background-color: #86b5af;
+  padding: 6px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar .logo {
+  display: flex;
+  align-items: center;
+  color: #fff;
+}
+
+.navbar .logo img {
+  height: 50px;
+  margin-right: 10px;
+}
+
+.navbar .logo-name {
+  font-size: 30px;
+  font-family: 'Aptos', sans-serif;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.navbar .menu ul {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+}
+
+.navbar .menu ul li {
+  margin: 0 10px;
+}
+
+.navbar .menu ul li a {
+  font-family: 'Aptos', sans-serif;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 19px;
+  transition: color 0.3s ease;
+}
+
+.navbar .menu ul li a:hover {
+  font-size: larger;
+}
+
+#home {
+  background-color: #86b5af;
+  color: white;
+  text-align: center;
+}
+
+#home h1 {
+  font-size: 170px;
+  padding: 0px;
+  font-family: 'Aptos', sans-serif;
+}
+
+#home p {
+  font-size: 25px;
+  padding: 0px;
+}
+
+section h2 {
+  font-size: 40px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+#mission {
+  background-color: #f9f9f9;
+  padding: 32px;
+}
+
+#mission p {
+  font-size: 18px;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+#features {
+  background-color:#f9f9f9;
+  padding: 32px;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+}
+
+.feature p {
+  background-color: #86b5af;
+  padding: 20px;
+  font-size: 18px;
+}
+
+#guide {
+  background-color: #fff;
+  padding: 0px;
+}
+
+#guide iframe {
+  padding: 0px 0px;
+  max-width: 100%;
+  height: 380px;
+  margin-top: 40px;
+  align-items: center;
+}
+
+#team {
+  background-color: #86b5af;
+  padding: 32px;
+}
+
+#team .team-members {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.team-member {
+  text-align: center;
+}
+
+.team-member img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+  .navbar .menu ul {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+  }
+
+  section {
+      height: auto;
+      padding: 32px;
+  }
+
+  .features-grid {
+      grid-template-columns: 1fr;
+  }
+}
+
+
+
+
+
+
+
+
+
+
