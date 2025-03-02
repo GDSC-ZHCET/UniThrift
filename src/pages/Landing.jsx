@@ -1,16 +1,15 @@
 import React from 'react';
 import './Landing.css';
-
-import logo from '../../assets/logo.png';  
-import member1 from '../../assets/pp.jpeg';
-import member2 from '../../assets/pp.jpeg';
-import member3 from '../../assets/pp.jpeg';
-import member4 from '../../assets/pp.jpeg';
+import logo from '../assets/logo.png';  
+import member1 from '../assets/pp.jpeg';
+import member2 from '../assets/pp.jpeg';
+import member3 from '../assets/pp.jpeg';
+import member4 from '../assets/pp.jpeg';
 
 const LandingPage = () => {
   return (
     <div className="landing-page">
-      <nav className="navbar">
+      {/* <nav className="navbar">
         <div className="logo">
           <img src={logo} alt="Logo" />
           <span className="logo-name">UniThrift</span>
@@ -24,7 +23,7 @@ const LandingPage = () => {
             <li><a href="#team">The Team</a></li>
           </ul>
         </div>
-      </nav>
+      </nav> */}
 
  
       <section id="home">

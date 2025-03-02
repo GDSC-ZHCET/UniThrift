@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import UserContext from "../utils/UserContext";
 import { signout } from "../utils/useSignout";
+import logo from "../assets/logo.png";
 
 const Navbar = () => {
   const { currentUser } = useContext(UserContext);
@@ -13,8 +14,9 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="w-full h-[8vh] fixed top-0 left-0 flex justify-between items-center bg-white border-b p-4">
-      <div className="font-bold text-2xl">
+    <nav className="w-full h-[8vh] fixed top-0 left-0 flex justify-between items-center bg-[#86b5af] text-white p-4">
+      <div className="flex items-center font-bold text-3xl">
+        <img src={logo} alt="Logo" className="h-10"/>
         <Link to="/">UniThrift</Link>
       </div>
       <div className="flex items-center gap-10 font-medium">

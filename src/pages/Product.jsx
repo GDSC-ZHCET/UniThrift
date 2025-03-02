@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom';
-import Data from './data';
+import Data from './Data';
 import '../pages/Product.css'
 import useFetchProducts from '../utils/useFetchProducts';
 
