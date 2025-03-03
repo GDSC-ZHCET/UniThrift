@@ -2,6 +2,7 @@
 import "../pages/Login.css"
 import React,{useState} from "react"
 import { use } from "react"
+import { Link } from 'react-router-dom';
 function Login (){
     const [email,setEmail] = useState("")
     const [username,setUsername] = useState("")
@@ -43,7 +44,7 @@ function Login (){
          <button className="Login-button">Login</button>
          </div>
     <p>Don't have an account?
-    <div><a href="###" className="link">Sign up</a></div></p>
+    <div><Link to="/signup" className="link">SignUp</Link></div></p>
     </form>
 
 </>

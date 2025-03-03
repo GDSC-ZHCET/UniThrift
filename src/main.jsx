@@ -8,6 +8,8 @@ import Signup from './pages/Signup.jsx'
 import Navbar from './components/Navbar.jsx';
 import Cart from './pages/Cart.jsx';
 import Product from './components/Product.jsx';
+import ProductsList from './components/ProductsList.jsx';
+import FetchProductsList from './components/FetchProduct.jsx';
 
 const appRouter = createBrowserRouter([
   {
@@ -42,6 +44,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/product",
         element: <Product />
+      },
+      {
+        path: "/product-list",
+        element: <FetchProductsList />
       },
 
     ]
