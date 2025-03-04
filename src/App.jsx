@@ -1,18 +1,12 @@
 import Product from'./pages/Product.jsx';
-import Signup from './pages/Signup.jsx';
-import Login from './pages/Login.jsx';
-import Cart from './pages/Cart'
-import FetchProductsList from './components/FetchProduct.jsx';
-import ProfilePage from './pages/ProfilePage.jsx';
-import Header from "./pages/Header";
-
+import LandingPage from './pages/Landing.jsx';
 
 function App() {
   return (
     <div className='App'>
       <div className="content">
-        
-        <ProfilePage/>
+        {/* <Product/> */}
+        <LandingPage/>
       </div>
     </div>
   )

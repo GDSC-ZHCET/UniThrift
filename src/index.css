@@ -63,8 +63,9 @@ body {
 .content{
   display: flex;
   justify-content: space-between;
-  padding: 20px;
-  padding-top: 10vh;
+  width: calc(100vw - 8px);
+  /* padding: 20px; */
+  padding-top: 8vh;
 }
 
 /* Cart */
@@ -148,4 +149,22 @@ body {
   background: #333;
 body{
     background: "black";
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }

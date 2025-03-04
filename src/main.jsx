@@ -7,17 +7,29 @@ import Login from './pages/Login.jsx'
 import Signup from './pages/Signup.jsx'
 import Navbar from './components/Navbar.jsx';
 import Cart from './pages/Cart.jsx';
-import Product from './components/Product.jsx';
-import ProductsList from './components/ProductsList.jsx';
-import FetchProductsList from './components/FetchProduct.jsx';
+import Product  from './components/Product.jsx';
+import Upload from './pages/Upload.jsx';
+import {Provider} from "react-redux";
+import appStore from './utils/appStore.js';
+import { UserProvider } from './utils/UserContext.jsx';
 
 const appRouter = createBrowserRouter([
+  {
+    path: "/login",
+    element: <Login />
+  },
+  {
+    path: "/signup", 
+    element: <Signup />
+  },
   {
     path: "/",
     element: (
       <>
+      <Provider store={appStore}>
         <Navbar />
         <Outlet />
+      </Provider>
       </>
     ),
     children: [
@@ -30,14 +42,6 @@ const appRouter = createBrowserRouter([
         element: <Product />
       },
       {
-        path: "/login",
-        element: <Login />
-      },
-      {
-        path:"/signup",
-        element: <Signup />
-      },
-      {
         path: "/cart",
         element: <Cart />
       },
@@ -46,16 +50,17 @@ const appRouter = createBrowserRouter([
         element: <Product />
       },
       {
-        path: "/product-list",
-        element: <FetchProductsList />
-      },
-
-    ]
+        path: "/upload",
+        element: <Upload />
+    }
+    ],
   }
 ])
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 
 root.render(
-  <RouterProvider router={appRouter}/>
+  <UserProvider>
+    <RouterProvider router={appRouter}/>
+  </UserProvider>
 );
