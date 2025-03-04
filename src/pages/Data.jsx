@@ -3,7 +3,7 @@ function Data({ data }) {
     const naviagte = useNavigate();
 
     const handleShowProduct = () => {
-        naviagte(`product/${data.id}`)
+        naviagte(`/product/${data.id}`)
     }
 
   return (

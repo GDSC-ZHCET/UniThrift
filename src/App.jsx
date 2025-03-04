@@ -2,8 +2,6 @@ import Product from'./pages/Product.jsx';
 import LandingPage from './pages/Landing.jsx';
 
 function App() {
-  
-
   return (
     <div className='App'>
       <div className="content">
@@ -14,4 +12,4 @@ function App() {
   )
 }
 
-export default App
+export default App;
