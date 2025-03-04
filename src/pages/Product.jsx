@@ -3,7 +3,7 @@ import Data from './Data';
 import '../pages/Product.css'
 import useFetchProducts from '../utils/useFetchProducts';
 
-const Product = () => {
+const Products = () => {
   const { productId } = useParams();
   const {products, loading, error} = useFetchProducts();
 
@@ -20,4 +20,4 @@ const Product = () => {
   );
 }
 
-export default Product;
+export default Products;

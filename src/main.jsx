@@ -2,7 +2,7 @@ import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import './index.css'
 import App from './App.jsx'
-// import Product from './pages/Product.jsx'
+import Products from './pages/Product.jsx'
 import Login from './pages/Login.jsx'
 import Signup from './pages/Signup.jsx'
 import Navbar from './components/Navbar.jsx';
@@ -47,8 +47,8 @@ const appRouter = createBrowserRouter([
         element: <Cart />
       },
       {
-        path: "/product",
-        element: <Product />
+        path: "/products",
+        element: <Products />
       },
       {
         path: "/upload",
