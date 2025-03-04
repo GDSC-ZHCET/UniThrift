@@ -10,11 +10,6 @@ function App() {
       </div>
     </div>
   )
-    <>
-      <Header/>
-      <h1 className="text-black">Head</h1>
-    </>
-  );
 }
 
 export default App;

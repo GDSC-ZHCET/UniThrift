@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import { FaShoppingCart, FaHeart, FaMapMarkerAlt, FaEnvelope, FaPhone, FaSignOutAlt, FaCamera } from "react-icons/fa";
+import pp from "../assets/pp.jpg";
+
+
 const ProfilePage = () => {
-  const [profilePic, setProfilePic] = useState("pp.jpg");
+  const [profilePic, setProfilePic] = useState(pp);
 
   const handleImageUpload = (event) => {
     const file = event.target.files[0];
@@ -15,11 +18,11 @@ const ProfilePage = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen p-6">
+    <div className="flex flex-col items-center justify-center min-h-screen p-6 mt-[8vh]">
       <div className="bg-white shadow-2xl rounded-3xl p-8 w-96 text-center transition-transform transform hover:scale-105">
         <div className="relative w-32 h-32 mx-auto">
           <img
-            src={'pp.jpg'}
+            src={profilePic}
             className="w-32 h-32 rounded-full mx-auto shadow-lg border-4 "
           />
           <label htmlFor="file-upload" className="absolute bottom-0 right-0 bg-gray-800 text-white p-2 rounded-full shadow-md hover:bg-gray-700 transition cursor-pointer">

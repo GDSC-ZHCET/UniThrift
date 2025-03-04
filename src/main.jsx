@@ -12,6 +12,7 @@ import Upload from './pages/Upload.jsx';
 import {Provider} from "react-redux";
 import appStore from './utils/appStore.js';
 import { UserProvider } from './utils/UserContext.jsx';
+import ProfilePage from './pages/ProfilePage.jsx';
 
 const appRouter = createBrowserRouter([
   {
@@ -52,7 +53,11 @@ const appRouter = createBrowserRouter([
       {
         path: "/upload",
         element: <Upload />
-    }
+      },
+      {
+        path: "/profile",
+        element: <ProfilePage />
+      },
     ],
   }
 ])
