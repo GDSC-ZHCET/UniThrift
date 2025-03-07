@@ -1,7 +1,8 @@
+import { Link } from "react-router-dom";
+
 const Summary = ({total}) => {
 
-    const subtotal=80
-    const delivery=40
+    const delivery=0
     const totalLocal = total + delivery
 
     return ( 
@@ -11,26 +12,23 @@ const Summary = ({total}) => {
             </div>
             <div className="subtotal">
                 Subtotal
-                <div className="p1">${total}</div>
+                <div className="p1">₹{total}</div>
             </div>
             <div className="ed">
                 Estimated Delivery & Handling
-                <div className="p2">${delivery}</div>
+                <div className="p2">₹{total === 0 ? 0 : delivery}</div>
             </div>
             <div className="flex justify-between py-10 text-xl font-bold">
                 Total
-                <div className="p3">${totalLocal}</div>
+                <div className="p3">₹{total === 0 ? 0 : totalLocal}</div>
             </div>
             
-            <button className="checkout-btn">
+            <Link to={'/checkout'} className="checkout-btn">
                 Checkout
-            </button>
+            </Link>
         </div>
         
      );
 }
  
 export default Summary;
-<div className="summary">
-    <h2>Summary</h2>
-</div>

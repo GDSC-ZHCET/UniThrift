@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom/client'
-import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Outlet, Navigate } from "react-router-dom";
 import './index.css'
 import App from './App.jsx'
 import Products from './pages/Product.jsx'
@@ -13,6 +13,22 @@ import {Provider} from "react-redux";
 import appStore from './utils/appStore.js';
 import { UserProvider } from './utils/UserContext.jsx';
 import ProfilePage from './pages/ProfilePage.jsx';
+import { useContext } from 'react';
+import UserContext from './utils/UserContext.jsx';
+import Checkout from './pages/Checkout.jsx';
+
+const ProtectedRoute = ({ children }) => {
+  const { currentUser } = useContext(UserContext);
+  
+  if (!currentUser) {
+    // Redirect to login if not authenticated
+    return <Navigate to="/login" replace />;
+  }
+  
+  return children;
+};
+
+
 
 const appRouter = createBrowserRouter([
   {
@@ -47,16 +63,32 @@ const appRouter = createBrowserRouter([
         element: <Cart />
       },
       {
+        path: "/checkout",
+        element: <Checkout />
+      },
+      {
+        path: "/checkout",
+        element: <Checkout />
+      },
+      {
         path: "/products",
         element: <Products />
       },
       {
         path: "/upload",
-        element: <Upload />
+        element: (
+          <ProtectedRoute>
+            <Upload />
+          </ProtectedRoute>
+        )
       },
       {
         path: "/profile",
-        element: <ProfilePage />
+        element: (
+          <ProtectedRoute>
+            <ProfilePage />
+          </ProtectedRoute>
+        )
       },
     ],
   }
