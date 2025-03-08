@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { FaShoppingCart, FaHeart, FaMapMarkerAlt, FaEnvelope, FaPhone, FaSignOutAlt, FaCamera } from "react-icons/fa";
 import pp from "../assets/pp.jpg";
+import { useContext } from "react";
+import UserContext from "../utils/UserContext.jsx";
 
-
+const {currentUser}=useContext(UserContext);
 const ProfilePage = () => {
   const [profilePic, setProfilePic] = useState(pp);
 
@@ -30,12 +32,12 @@ const ProfilePage = () => {
             <input id="file-upload" type="file" accept="image/*" className="hidden" onChange={handleImageUpload} />
           </label>
         </div>
-        <h1 className="text-2xl font-bold mt-4 text-gray-900">Mohammad Shiraz</h1>
+        <h1 className="text-2xl font-bold mt-4 text-gray-900">{currentUser?.displayName || "User"}</h1>
         
         <div className="mt-4 text-left space-y-2 text-gray-700">
-          <p className="flex items-center gap-2"><FaMapMarkerAlt className="text-blue-500" /> I live in the moment. You should try it sometime.</p>
-          <p className="flex items-center gap-2"><FaEnvelope className="text-red-500" /> leave.me.alone@bye.com</p>
-          <p className="flex items-center gap-2"><FaPhone className="text-green-500" /> 0800-MYOB (Mind Your Own Business)</p>
+          <p className="flex items-center gap-2"><FaMapMarkerAlt className="text-blue-500" /> {currentUser?.bio || "No bio available"}</p>
+          <p className="flex items-center gap-2"><FaEnvelope className="text-red-500" /> {currentUser?.email || "No email found"}</p>
+          <p className="flex items-center gap-2"><FaPhone className="text-green-500" /> {currentUser?.phoneno || "No phone number found"}</p>
         </div>
         
         <div className="flex justify-center gap-6 mt-6">
