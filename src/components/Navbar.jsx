@@ -22,6 +22,7 @@ const Navbar = () => {
       <div className="flex items-center gap-10 font-medium">
         <Link to="/cart">Cart</Link>
         <Link to="/wishlist">Wishlist</Link>
+        <Link to="/status">History</Link>
         {currentUser ? (
           <div className="flex items-center gap-4">
             <p className="text-gray-600">{currentUser.email}</p>

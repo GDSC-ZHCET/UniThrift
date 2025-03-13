@@ -16,6 +16,7 @@ import ProfilePage from './pages/ProfilePage.jsx';
 import { useContext } from 'react';
 import UserContext from './utils/UserContext.jsx';
 import Checkout from './pages/Checkout.jsx';
+import OrderStatus from './pages/OrderStatus.jsx';
 
 const ProtectedRoute = ({ children }) => {
   const { currentUser } = useContext(UserContext);
@@ -73,6 +74,14 @@ const appRouter = createBrowserRouter([
       {
         path: "/products",
         element: <Products />
+      },
+      {
+        path: "/status",
+        element: (
+          <ProtectedRoute>
+            <OrderStatus />
+          </ProtectedRoute>
+        )
       },
       {
         path: "/upload",
