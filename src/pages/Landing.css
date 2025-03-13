@@ -1,9 +1,9 @@
-* {
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
+} */
+/* 
 body {
   font-family: 'Aptos', sans-serif;
   background-color: #FDFFF3;
@@ -15,20 +15,25 @@ body {
 html {
   scroll-snap-type: y mandatory;
   height: 100%;
+} */
+
+.landing-page{
+  width: 100%;
 }
 
 section {
   font-family: 'Aptos', sans-serif;
   height: 100vh;
+  width: 100%; 
   scroll-snap-align: start;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 32px;
+  /* padding: 32px; */
 }
 
-.navbar {
+/* .navbar {
   background-color: #86b5af;
   padding: 6px 20px;
   display: flex;
@@ -78,7 +83,7 @@ section {
 
 .navbar .menu ul li a:hover {
   font-size: larger;
-}
+} */
 
 #home {
   background-color: #86b5af;
@@ -178,6 +183,10 @@ section h2 {
   section {
       height: auto;
       padding: 32px;
+  }
+
+  #home h1 {
+      font-size: 100px;
   }
 
   .features-grid {

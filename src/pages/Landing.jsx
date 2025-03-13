@@ -1,16 +1,16 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Landing.css';
-
-import logo from '../../assets/logo.png';  
-import member1 from '../../assets/pp.jpeg';
-import member2 from '../../assets/pp.jpeg';
-import member3 from '../../assets/pp.jpeg';
-import member4 from '../../assets/pp.jpeg';
+import logo from '../assets/logo.png';  
+import member1 from '../assets/pp.jpeg';
+import member2 from '../assets/pp.jpeg';
+import member3 from '../assets/pp.jpeg';
+import member4 from '../assets/pp.jpeg';
 
 const LandingPage = () => {
   return (
     <div className="landing-page">
-      <nav className="navbar">
+      {/* <nav className="navbar">
         <div className="logo">
           <img src={logo} alt="Logo" />
           <span className="logo-name">UniThrift</span>
@@ -24,12 +24,13 @@ const LandingPage = () => {
             <li><a href="#team">The Team</a></li>
           </ul>
         </div>
-      </nav>
+      </nav> */}
 
  
       <section id="home">
         <h1 className="home-heading">UniThrift</h1>
         <p className="home-tagline">Your tagline here</p>
+        <Link to={'/products'} className='border-2 border-[#86b5af] mt-10 px-6 py-3 rounded-full text-xl bg-white text-[#86b5af] transition-all hover:scale-110 hover:bg-transparent hover:text-white hover:border-white cursor-pointer'>Explore</Link>
       </section>
 
       <section id="mission">
