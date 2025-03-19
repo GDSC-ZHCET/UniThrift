@@ -8,7 +8,7 @@ const Products = () => {
 
   return (
     <div className='product-style'>
-      <div className="product-item flex">
+      <div className="product-item flex flex-wrap">
         {products.map((data,i)=>{
           return<Data key={i} data={data}/>
         })}

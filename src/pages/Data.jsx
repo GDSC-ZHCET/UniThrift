@@ -8,17 +8,17 @@ function Data({ data }) {
 
   return (
     <div 
-        className="w-[250px] flex flex-col items-center justify-center border border-gray-300 rounded-lg shadow-md p-5 m-[10px] cursor-pointer hover:scale-105 transition-all duration-600"
+        className="sm:w-[250px] w-full flex flex-col items-center justify-center border border-gray-300 rounded-md  shadow-xs p-5 m-[10px] cursor-pointer "
         onClick={handleShowProduct}
     >
       <img
-        className="mb-2.5 w-72 h-48 object-cover"
+        className="mb-2.5 w-full h-full sm:w-72 sm:h-48 object-cover"
         src={data.imageUrl}
         alt=""
       />
-      <p className="font-bold text-xl">{data.title}</p>
-      <div className="font-medium text-lg">
-        <p>₹{data.price}</p>
+      <div className="flex flex-col items-start w-full font-medium text-sm">
+        <p className="font-medium text-md">{data.title}</p>
+        <p className="font-bold">₹{data.price}</p>
       </div>
     </div>
   );

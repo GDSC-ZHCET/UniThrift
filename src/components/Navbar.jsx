@@ -34,7 +34,7 @@ const Navbar = () => {
 
   return (
     <Popover as="header" className="relative z-10">
-              <div className="bg-[#111828] pt-6">
+              <div className="bg-[#111828] py-6">
                 <nav
                   className="relative max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6"
                   aria-label="Global"
