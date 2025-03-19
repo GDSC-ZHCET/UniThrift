@@ -15,6 +15,7 @@ export const createOrder = async ({
   buyerId,
   items,
   sellerId,
+  phone,
   shippingAddress,
   totalAmount
 }) => {
@@ -28,6 +29,7 @@ export const createOrder = async ({
       payment_status: "pending", 
       seller_id: sellerId,
       seller_status: "pending",
+      phone: phone,
       shipping_address: shippingAddress,
       total_amount: totalAmount
     };
@@ -58,7 +60,7 @@ const useCheckout = () => {
    * @param {string} shippingAddress - Delivery address
    * @param {Object} currentUser - Current user from UserContext
    */
-  const processCheckout = async (cartItems, shippingAddress, currentUser) => {
+  const processCheckout = async (cartItems, phone, shippingAddress, currentUser, selectedDeliveryMethod) => {
     if (!currentUser) {
       throw new Error("User must be logged in to checkout");
     }
@@ -66,6 +68,8 @@ const useCheckout = () => {
     if (!cartItems || cartItems.length === 0) {
       throw new Error("Cart is empty");
     }
+
+    
     
     // Group items by seller
     const itemsBySeller = cartItems.reduce((acc, item) => {
@@ -78,12 +82,15 @@ const useCheckout = () => {
     
     // Create order for each seller
     const orderPromises = Object.entries(itemsBySeller).map(([sellerId, items]) => {
-      const totalAmount = items.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-      
+      let totalAmount = items.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+      if(selectedDeliveryMethod.title === 'Dorm Delivery'){
+        totalAmount = totalAmount + 50;
+      }
       return createOrder({
         buyerId: currentUser.uid,
         items,
         sellerId,
+        phone,
         shippingAddress,
         totalAmount
       });
