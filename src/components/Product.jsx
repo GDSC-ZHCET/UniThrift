@@ -17,7 +17,7 @@ const Product = () => {
     if (products.length > 0) {
       const foundProduct = products.find(item => item.id === productId);
       setProduct(foundProduct || null);
-      console.log("Product found:", foundProduct);
+      // console.log("Product found:", foundProduct);
     }
   }, [products, productId]);
   

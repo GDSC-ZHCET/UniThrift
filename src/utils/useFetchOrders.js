@@ -16,7 +16,7 @@ const useFetchOrders = () => {
                 return;
             }
 
-            console.log('Fetching orders for user:', currentUser.uid);
+            // console.log('Fetching orders for user:', currentUser.uid);
             try {
                 // Create a query to filter orders by the logged-in user's ID
                 const ordersQuery = query(
@@ -31,7 +31,7 @@ const useFetchOrders = () => {
                 }));
                 
                 setOrders(ordersList);
-                console.log('User orders:', ordersList);
+                // console.log('User orders:', ordersList);
             } catch (err) {
                 console.error('Error fetching orders:', err);
                 setError(err.message);

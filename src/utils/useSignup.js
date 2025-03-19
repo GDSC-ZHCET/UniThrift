@@ -6,7 +6,7 @@ export const signUp = async (email, password, username, navigate) => {
   
   try {
     const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-    console.log("User created:", userCredential.user);
+    // console.log("User created:", userCredential.user);
 
     const user = userCredential.user;
 

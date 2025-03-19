@@ -9,7 +9,7 @@ const useFetchProducts = () => {
 
     useEffect(() => {
         const fetchProducts = async () => {
-            console.log('Fetching products...');
+            // console.log('Fetching products...');
             try {
                 const querySnapshot = await getDocs(collection(db, 'products'));
                 const productsList = querySnapshot.docs.map(doc => ({
@@ -17,7 +17,7 @@ const useFetchProducts = () => {
                     ...doc.data()
                 }));
                 setProducts(productsList);
-                console.log(productsList);
+                // console.log(productsList);
             } catch (err) {
                 setError(err);
             } finally {

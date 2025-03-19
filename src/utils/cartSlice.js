@@ -34,7 +34,7 @@ const cartSlice = createSlice({
         addToWishlist: (state, action) => {
             state.wishlist.push(action.payload);
             state.wishlistIds.push(action.payload.id);
-            console.log(Array.from(state.wishlist));
+            // console.log(Array.from(state.wishlist));
         }
     }
 });
