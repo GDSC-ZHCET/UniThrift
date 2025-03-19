@@ -23,7 +23,7 @@ const Summary = ({total}) => {
                 <div className="p3">₹{total === 0 ? 0 : totalLocal}</div>
             </div>
             
-            <Link to={'/checkout'} className="checkout-btn">
+            <Link to={'/checkout'} className="bg-[#111828] hover:bg-[#1f2937] text-white py-3 px-5 rounded-md cursor-pointer transition duration-200 flex items-center justify-center gap-2">
                 Checkout
             </Link>
         </div>
