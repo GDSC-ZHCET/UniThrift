@@ -7,6 +7,7 @@ import Login from './pages/Login.jsx'
 import Signup from './pages/Signup.jsx'
 import Navbar from './components/Navbar.jsx';
 import Cart from './pages/Cart.jsx';
+import HowItWorks from './pages/howITworks.jsx';
 import Product  from './components/Product.jsx';
 import Upload from './pages/Upload.jsx';
 import {Provider} from "react-redux";
@@ -18,6 +19,7 @@ import UserContext from './utils/UserContext.jsx';
 import Checkout from './pages/Checkout.jsx';
 import OrderStatus from './pages/OrderStatus.jsx';
 import SellerConfirmation from './pages/SellerConfirmation.jsx';
+import RequestItem from './pages/requestitem.jsx';
 
 const ProtectedRoute = ({ children }) => {
   const { currentUser } = useContext(UserContext);
@@ -33,6 +35,7 @@ const ProtectedRoute = ({ children }) => {
 
 
 const appRouter = createBrowserRouter([
+
   {
     path: "/login",
     element: <Login />
@@ -52,6 +55,15 @@ const appRouter = createBrowserRouter([
       </>
     ),
     children: [
+      {
+        path: "/requestitem",
+        element: <RequestItem />
+      },
+      {
+        path: "/how-it-works",
+        element: <HowItWorks />
+      },
+      
       {
         index: true,
         element: <App />
