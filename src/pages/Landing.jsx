@@ -365,12 +365,12 @@ export default function HomePage() {
       </div>
     </div>
     <div className="mt-10">
-      <a
-        href="/how-it-works"
-        className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-green-600 hover:bg-green-700"
-      >
-        Learn more about our process
-      </a>
+    <Link
+  to="/how-it-works"
+  className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-green-600 hover:bg-green-700"
+>
+  Learn more about our process
+</Link>
     </div>
   </div>
 </div>
