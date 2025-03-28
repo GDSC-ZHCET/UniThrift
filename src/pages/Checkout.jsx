@@ -25,8 +25,6 @@ const Checkout = () => {
   
   // Form fields
   const [address, setAddress] = useState('');
-  const [email, setEmail] = useState('');
-  const [phone, setPhone] = useState('');
   
   const cartItems = useSelector(state => state.cart.items);
   const { currentUser } = useContext(UserContext);
@@ -51,7 +49,7 @@ const Checkout = () => {
       setProcessing(true);
       setError('');
       
-      const results = await processCheckout(cartItems, phone, address, currentUser, selectedDeliveryMethod);
+      const results = await processCheckout(cartItems, address, currentUser, selectedDeliveryMethod);
       const allSuccessful = results.every(result => result.success);
       
       if (allSuccessful) {
@@ -73,8 +71,6 @@ const Checkout = () => {
   return (
     <div className="bg-gray-50">
       <div className="max-w-2xl mx-auto pt-16 pb-24 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
-        <h2 className="sr-only">Checkout</h2>
-
         <form onSubmit={handleSubmit} className="lg:grid lg:grid-cols-2 lg:gap-x-12 xl:gap-x-16">
           <div>
             {/* Show error/success messages */}
@@ -108,47 +104,11 @@ const Checkout = () => {
               </div>
             )}
           
+
             <div>
-              <h2 className="text-lg font-medium text-gray-900">Contact information</h2>
-
-              <div className="mt-4">
-                <label htmlFor="email-address" className="block text-sm font-medium text-gray-700">
-                  Email address
-                </label>
-                <div className="mt-1">
-                  <input
-                    type="email"
-                    id="email-address"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    autoComplete="email"
-                    className="block w-full bg-white py-2 border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm"
-                    required
-                  />
-                </div>
-              </div>
-            </div>
-
-            <div className="mt-10 border-t border-gray-200 pt-10">
               <h2 className="text-lg font-medium text-gray-900">Shipping information</h2>
 
               <div className="mt-4 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-4">
-                <div className="sm:col-span-2">
-                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
-                    Phone
-                  </label>
-                  <div className="mt-1">
-                    <input
-                      type="tel"
-                      id="phone"
-                      value={phone}
-                      onChange={(e) => setPhone(e.target.value)}
-                      autoComplete="tel"
-                      className="block w-full bg-white py-2 border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm"
-                      required
-                    />
-                  </div>
-                </div>
 
                 <div className="sm:col-span-2">
                   <label htmlFor="address" className="block text-sm font-medium text-gray-700">

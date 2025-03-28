@@ -60,7 +60,7 @@ const useCheckout = () => {
    * @param {string} shippingAddress - Delivery address
    * @param {Object} currentUser - Current user from UserContext
    */
-  const processCheckout = async (cartItems, phone, shippingAddress, currentUser, selectedDeliveryMethod) => {
+  const processCheckout = async (cartItems, shippingAddress, currentUser, selectedDeliveryMethod) => {
     if (!currentUser) {
       throw new Error("User must be logged in to checkout");
     }
@@ -90,7 +90,8 @@ const useCheckout = () => {
         buyerId: currentUser.uid,
         items,
         sellerId,
-        phone,
+        phone: currentUser.phone,
+        email: currentUser.email,
         shippingAddress,
         totalAmount
       });
