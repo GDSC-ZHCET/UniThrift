@@ -53,7 +53,7 @@ const Product = () => {
         <img 
           src={product.imageUrl} 
           alt={product.title} 
-          className="h-fit max-h-[80vh] w-full rounded-md object-cover" 
+          className="h-fit max-h-[80vh] w-fit rounded-md object-cover" 
         />
       </div>
       
