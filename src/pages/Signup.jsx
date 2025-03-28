@@ -155,7 +155,7 @@ function Signup() {
                                                 value={formData.firstName}
                                                 onChange={handleChange}
                                                 className="focus:ring-green-500 focus:border-green-500 block w-full pl-10 sm:text-sm border-gray-300 rounded-md py-2"
-                                                placeholder="John"
+                                                placeholder="Dharampal"
                                                 required
                                             />
                                         </div>
@@ -176,7 +176,7 @@ function Signup() {
                                                 value={formData.lastName}
                                                 onChange={handleChange}
                                                 className="focus:ring-green-500 focus:border-green-500 block w-full pl-10 sm:text-sm border-gray-300 rounded-md py-2"
-                                                placeholder="Doe"
+                                                placeholder="Khan"
                                                 required
                                             />
                                         </div>
@@ -219,7 +219,7 @@ function Signup() {
                                             value={formData.username}
                                             onChange={handleChange}
                                             className="focus:ring-green-500 focus:border-green-500 block w-full pl-10 sm:text-sm border-gray-300 rounded-md py-2"
-                                            placeholder="johndoe"
+                                            placeholder="dharampalkhan"
                                             required
                                         />
                                     </div>
@@ -254,7 +254,7 @@ function Signup() {
                                             value={formData.phone}
                                             onChange={handleChange}
                                             className="py-2 focus:ring-green-500 focus:border-green-500 block w-full pl-10 sm:text-sm border-gray-300 rounded-md"
-                                            placeholder="(123) 456-7890"
+                                            placeholder="9998886999"
                                         />
                                     </div>
                                 </div>
@@ -274,7 +274,7 @@ function Signup() {
                                             value={formData.university}
                                             onChange={handleChange}
                                             className="py-2 focus:ring-green-500 focus:border-green-500 block w-full pl-10 sm:text-sm border-gray-300 rounded-md"
-                                            placeholder="Your University"
+                                            placeholder="Aligarh Muslim University"
                                         />
                                     </div>
                                 </div>
@@ -351,14 +351,6 @@ function Signup() {
                     </Link>
                 </p>
                 
-                <div className="mt-8 text-center">
-                    <p className="text-xs text-gray-500">
-                        By signing up, you agree to our{' '}
-                        <a href="#" className="underline hover:text-gray-700">Terms of Service</a>{' '}
-                        and{' '}
-                        <a href="#" className="underline hover:text-gray-700">Privacy Policy</a>
-                    </p>
-                </div>
             </div>
         </div>
     );
