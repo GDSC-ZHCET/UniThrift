@@ -1,14 +1,8 @@
-import React, { Fragment } from "react";
-import { Link } from "react-router-dom";
-import { Popover, Transition } from "@headlessui/react";
 import {
   AcademicCapIcon,
-  MenuIcon,
-  XIcon,
   SearchIcon,
   ShoppingCartIcon,
   UserCircleIcon,
-  ExternalLinkIcon,
 } from "@heroicons/react/outline";
 
 // // Define navigation items
@@ -26,7 +20,7 @@ const categories = [
     title: "Textbooks",
     description:
       "Find affordable textbooks for all your courses. Save up to 70% compared to campus bookstore prices.",
-    href: "/category/textbooks",
+    href: "/products",
     imageUrl:
       "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
   },
@@ -35,7 +29,7 @@ const categories = [
     title: "Electronics",
     description:
       "Laptops, calculators, and other tech essentials at student-friendly prices.",
-    href: "/category/electronics",
+    href: "/products",
     imageUrl:
       "https://images.unsplash.com/photo-1498049794561-7780e7231661?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
   },
@@ -44,7 +38,7 @@ const categories = [
     title: "Dorm & Apartment",
     description:
       "Everything you need to make your space comfortable from furniture to decor items.",
-    href: "/category/dorm",
+    href: "/products",
     imageUrl:
       "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80",
   },
@@ -168,7 +162,7 @@ export default function HomePage() {
             <div className="mx-auto max-w-7xl lg:px-8">
               <div className="lg:grid lg:grid-cols-2 lg:gap-8">
                 <div className="mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 sm:text-center lg:px-0 lg:text-left lg:flex lg:items-center">
-                  <div className="lg:py-24">
+                  <div className="lg:pb-24">
                     <h1 className="mt-4 text-4xl tracking-tight font-extrabold text-white sm:mt-5 sm:text-6xl lg:mt-6 xl:text-6xl">
                       <span className="block">Buy, sell, and save</span>
                       <span className="block text-green-200">
@@ -203,7 +197,7 @@ export default function HomePage() {
                               className="block w-full py-3 px-4 cursor-pointer rounded-md shadow bg-green-500 text-white font-medium hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-400 focus:ring-offset-gray-900"
                             >
                               <SearchIcon className="h-5 w-5 inline mr-1" />
-                              Search
+                              Explore
                             </button>
                           </div>
                         </div>
@@ -365,12 +359,11 @@ export default function HomePage() {
       </div>
     </div>
     <div className="mt-10">
-      <a
-        href="/how-it-works"
-        className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-green-600 hover:bg-green-700"
+      <span
+        className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-green-600 "
       >
         Learn more about our process
-      </a>
+      </span>
     </div>
   </div>
 </div>
