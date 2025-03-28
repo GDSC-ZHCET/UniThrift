@@ -61,7 +61,8 @@ const Upload = () => {
                 price,
                 category,
                 imageUrl,
-                userId: currentUser.uid
+                sellerId: currentUser.uid,
+                seller: currentUser.displayName,
             });
 
             if (result.success) {

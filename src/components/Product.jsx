@@ -17,7 +17,6 @@ const Product = () => {
     if (products.length > 0) {
       const foundProduct = products.find(item => item.id === productId);
       setProduct(foundProduct || null);
-      // console.log("Product found:", foundProduct);
     }
   }, [products, productId]);
   
@@ -77,6 +76,12 @@ const Product = () => {
           Add to Wishlist
         </button>
         
+        <div className="flex items-baseline ">
+          <span className="font-semibold text-black text-[1rem]">Posted By:</span>
+          <span className="ml-5 font-medium text-[1rem]">
+            {product.seller}
+          </span>
+        </div>
         <div className="text-sm text-slate-700">
           <span className="font-semibold text-black text-[1rem]">Description</span>
           <p className="mt-5">

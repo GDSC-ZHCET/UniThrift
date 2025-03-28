@@ -1,7 +1,7 @@
 import { collection, addDoc } from 'firebase/firestore';
 import { db } from '../firebase';
 
-export const uploadProduct = async ({ title, description, price, category, imageUrl, userId }) => {
+export const uploadProduct = async ({ title, description, price, category, imageUrl, sellerId, seller }) => {
     try {
         // Add product to Firestore with Cloudinary URL
         const productRef = await addDoc(collection(db, 'products'), {
@@ -10,7 +10,8 @@ export const uploadProduct = async ({ title, description, price, category, image
             price: Number(price),
             imageUrl,
             category,
-            userId,
+            sellerId,
+            seller,
             createdAt: new Date().toISOString()
         });
 
